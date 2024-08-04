@@ -694,7 +694,7 @@ class Model(nn.Module):
             elif self.att_type == 'concat_DHT':
                 if self.use_residue:
                     self.smax_fc = nn.Linear((D_g+graph_hidden_size*2)*len(self.modals), n_classes)
-                else:
+                else: # this is the one
                     self.smax_fc = nn.Linear((graph_hidden_size*2)*len(self.modals), n_classes)
             elif self.att_type == 'gated':
                 if len(self.modals) == 3:
